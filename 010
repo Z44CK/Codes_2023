@@ -29,8 +29,8 @@ while True:
     taxa_crescimento_a = float(input('Informe a taxa de porcentagem do país A: '))
     taxa_crescimento_b = float(input('Informe a taxa de porcentagem do país B: '))
 
-    a = taxa_crescimento_a / 100
-    b = taxa_crescimento_b / 100
+    a = 1 + taxa_crescimento_a / 100
+    b = 1 + taxa_crescimento_b / 100
 
     anos = 0
 
@@ -44,4 +44,5 @@ while True:
 
     repetir = input('Deseja repetir a operação: (s/n) ')
     if repetir.lower() != 's':
+        print('Programa encerrado!')
         break
