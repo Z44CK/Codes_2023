@@ -1,0 +1,59 @@
+import requests
+import json
+
+#Dados do acesso
+
+url = 'http://coopertotal.nc7i.com/'
+email = 'leonardo@coopertotal.com.br'
+senha = '1234'
+
+#Dados do pedido
+
+farmacia = 'Farmácia: 01.621.293/0002-78 - TESTE PORTAL - NÃO FATURAR'
+condicoes = 'CONDIÇÃO DIAMANTE A PRAZO'
+prazo_pagamento = '42 dias'
+dados_pagamento = 'boleto bancario'
+
+#Itens a serem comprados
+
+itens = [
+    {'codigo_barras': '7896241225530', 'quantidade': 1},
+    {'codigo_barras': '7897595901927', 'quantidade': 2},
+    {'codigo_barras': '7896241225547', 'quantidade': 1}
+]
+
+#verifica se o pedido atinge o valor minimo para faturamento
+
+valor_minimo = 100
+valor_pedido = 0
+for item in itens:
+    valor_pedido += item ['quantidade']
+
+    if valor_pedido < valor_minimo:
+        itens.append({'codigo_barras': '7896007547654', 'quantidade': valor_minimo - valor_pedido})
+
+
+    session = requests.Session()
+    login_url = url + 'login'
+    login_data = {'email': email, 'senha': senha}
+    session.post(login_url, data=login_data)
+
+    pedido_url = url + 'pedido/criar'
+    pedido_data = {
+        'farmacia': farmacia,
+        'condicoes': condicoes,
+        'prazo_pagamento': prazo_pagamento,
+        'dados_pagamento': dados_pagamento,
+        'itens': json.dumps(itens)
+
+    }
+response = session.post(pedido_url, data=pedido_data)
+pedido_id = json.loads(response.text)['order_id']
+status = json.loads(response.text)['status']
+
+dados_pedido = {'status': status, 'order_id': pedido_id}
+with open ('dados_pedido.json', 'w') as f:
+    json.dump(dados_pedido, f)
+
+    print('Pedido criado com sucesso. Número do pedido:', pedido_id)
+    print('Status:', status)
