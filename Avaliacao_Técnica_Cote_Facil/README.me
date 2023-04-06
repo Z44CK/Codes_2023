@@ -1,3 +1,25 @@
 Questão 1
 
 Nesse código, primeiro é criada uma senha segura com a biblioteca pynacl e é armazenada em um arquivo seguro. Em seguida, é feito o login na página utilizando a biblioteca Requests, passando a senha segura gerada anteriormente. Depois disso, o código acessa cada categoria de produtos e coleta os dados dos produtos disponíveis. Por fim, os dados são salvos em um arquivo JSON.
+
+Questão 3
+
+Para executar o script, você precisará seguir os seguintes passos:
+
+Certifique-se de ter a biblioteca Scrapy instalada em sua máquina. Se não tiver, instale executando o comando pip install scrapy.
+
+Copie e cole o código do script em um arquivo com extensão .py em seu computador.
+
+No código do script, na classe PedidosSpider, atualize as informações de login na linha 10 com o e-mail e senha corretos para acessar o site.
+
+Na mesma classe, atualize as informações do pedido que você deseja criar na linha 15 com as informações corretas da farmácia, condições, prazo de pagamento e dados de pagamento.
+
+Na mesma classe, atualize as informações dos itens que você deseja comprar na linha 19 com as informações corretas do código de barras e quantidade.
+
+Salve as alterações no arquivo.
+
+Abra um terminal na pasta onde o arquivo .py foi salvo.
+
+Execute o comando scrapy runspider nome_do_arquivo.py -o resultado.json, substituindo nome_do_arquivo.py pelo nome do arquivo em que você salvou o script.
+
+Aguarde a execução do script. Ao final, será gerado um arquivo resultado.json na pasta onde o arquivo .py foi salvo, contendo o status e o número do pedido no site.
