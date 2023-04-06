@@ -1,59 +1,57 @@
 import requests
 import json
 
-#Dados do acesso
+# faz o login na página
+login_data = {
+    "email": "leonardo@coopertotal.com.br",
+    "senha": "1234"
+}
+response = requests.post("http://coopertotal.nc7i.com/login", data=login_data)
 
-url = 'http://coopertotal.nc7i.com/'
-email = 'leonardo@coopertotal.com.br'
-senha = '1234'
+# obtém o cookie da sessão
+session_cookie = response.cookies.get_dict()
 
-#Dados do pedido
+# acessa a página de pedidos para obter o valor mínimo de faturamento
+pedidos_url = "http://coopertotal.nc7i.com/pedidos"
+pedidos_response = requests.get(pedidos_url, cookies=session_cookie)
 
-farmacia = 'Farmácia: 01.621.293/0002-78 - TESTE PORTAL - NÃO FATURAR'
-condicoes = 'CONDIÇÃO DIAMANTE A PRAZO'
-prazo_pagamento = '42 dias'
-dados_pagamento = 'boleto bancario'
+valor_minimo_faturamento = 1000  # substituir pelo valor mínimo de faturamento obtido na página
 
-#Itens a serem comprados
-
+# adiciona os itens no carrinho de compras
+adicionar_item_url = "http://coopertotal.nc7i.com/pedido/adicionar-item"
 itens = [
-    {'codigo_barras': '7896241225530', 'quantidade': 1},
-    {'codigo_barras': '7897595901927', 'quantidade': 2},
-    {'codigo_barras': '7896241225547', 'quantidade': 1}
+    {"codigo_barras": "7896241225530", "quantidade": 1},
+    {"codigo_barras": "7897595901927", "quantidade": 2},
+    {"codigo_barras": "7896241225547", "quantidade": 1}
 ]
+total_pedido = 0
 
-#verifica se o pedido atinge o valor minimo para faturamento
-
-valor_minimo = 100
-valor_pedido = 0
 for item in itens:
-    valor_pedido += item ['quantidade']
-
-    if valor_pedido < valor_minimo:
-        itens.append({'codigo_barras': '7896007547654', 'quantidade': valor_minimo - valor_pedido})
-
-
-    session = requests.Session()
-    login_url = url + 'login'
-    login_data = {'email': email, 'senha': senha}
-    session.post(login_url, data=login_data)
-
-    pedido_url = url + 'pedido/criar'
-    pedido_data = {
-        'farmacia': farmacia,
-        'condicoes': condicoes,
-        'prazo_pagamento': prazo_pagamento,
-        'dados_pagamento': dados_pagamento,
-        'itens': json.dumps(itens)
-
+    item_data = {
+        "codigoBarras": item["codigo_barras"],
+        "quantidade": item["quantidade"]
     }
-response = session.post(pedido_url, data=pedido_data)
-pedido_id = json.loads(response.text)['order_id']
-status = json.loads(response.text)['status']
+    response = requests.post(adicionar_item_url, data=item_data, cookies=session_cookie)
+    total_pedido += float(response.json()["valorTotal"].replace(",", "."))
 
-dados_pedido = {'status': status, 'order_id': pedido_id}
-with open ('dados_pedido.json', 'w') as f:
-    json.dump(dados_pedido, f)
+# verifica se o valor mínimo de faturamento foi atingido
+if total_pedido < valor_minimo_faturamento:
+    # adiciona o produto 7896007547654 com a menor quantidade possível para atingir o valor mínimo de faturamento
+    produto_adicional_data = {
+        "codigoBarras": "7896007547654",
+        "quantidade": int((valor_minimo_faturamento - total_pedido) / 5)  # substituir 5 pelo valor unitário do produto
+    }
+    response = requests.post(adicionar_item_url, data=produto_adicional_data, cookies=session_cookie)
 
-    print('Pedido criado com sucesso. Número do pedido:', pedido_id)
-    print('Status:', status)
+# acessa a página de pedido para obter o status e o número do pedido
+pedido_url = "http://coopertotal.nc7i.com/pedido"
+pedido_response = requests.get(pedido_url, cookies=session_cookie)
+
+status_pedido = pedido_response.json()["statusPedido"]
+numero_pedido = pedido_response.json()["idPedido"]
+
+# gera o JSON com o status e o número do pedido
+pedido_json = {
+    "status": status_pedido,
+    "numero": numero_pedido
+}
