@@ -1,0 +1,13 @@
+Questão 7
+
+Virtual PRivate Networks conhecidas como VPN's, Subnets e Security Groups são conceitos relacionados à segurança de redes de computadores e têm objetivos difetens.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Uma VPN é uma rede privada virutal que utiliza a infraestrutura de uma rede pública para conectar dispositivos de forma segura, 
+ela permita que usuários remotos acessem a rede corporativa de uma empresa como se estivessem fisicamente na emnpresa.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Um Subnet é uma divisão lógica de uma rede maior em sub-redes menores. 
+Ele permite que uma rede física seja dividida em várias sub-redes, cada uma com seu próprio IP.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Um Security Group é um conjunto de regras de segurança que controla o tráfego de uma rede para insâncias EC2 (Amazon Elastic Compute Cloud.) 
+Ele age como um firewall virtual para uma ou mais instãncias, permitindo que você defina regras de entrada e saída de tráfego baseadas em protocolo,
+porta e endereço IP de origem e destino.
