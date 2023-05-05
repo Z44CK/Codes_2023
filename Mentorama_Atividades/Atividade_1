@@ -1,0 +1,83 @@
+n = input('Informe seu nome completo: ')
+print(n)
+
+--------------------------------------------------------------------------
+
+a = 5
+b = 3
+soma = a * b
+print(soma)
+
+---------------------------------------------------------------------------
+
+a = 5
+b = 3
+c = 5
+soma = (a + b + c)
+print(soma)
+
+--------------------------------------------------------------------------
+
+while True:
+    n1 = input('Informe o numero: ')
+    operador = input('Operador: ')
+    n2 = input('Informe o numero: ')
+
+    n1 = int(n1)
+    n2 = int(n2)
+    if operador == '+':
+        print(n1+n2)
+        break
+    elif operador == '-':
+        print(n1-n2)
+        break
+    elif operador == '*':
+        print(n1*n2)
+        break
+    elif operador == '/':
+        print(f'{n1/n2:.2f}')
+        break
+    else:
+        print('Operador Inválido!')
+
+------------------------------------------------------------------------
+
+contador = 1
+
+while contador <= 10:
+    print(contador)
+    contador += 1
+print('')
+contador = 0
+
+for contador in range(1, 11):
+    print(contador)
+
+-------------------------------------------------------------------------
+
+pares = 0
+impares = 0
+num = 1
+while num <= 10:
+    if num % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+    num += 1
+
+print('Quantidade de números pares é:', pares)
+print('Quantidade de números impares é:', impares)
+
+print('')
+
+pares = 0
+impares = 0
+
+for num in range(1, 10):
+    if num % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+print('Quantidade de números pares é:', pares)
+print('Quantidade de números impares é:', impares)
