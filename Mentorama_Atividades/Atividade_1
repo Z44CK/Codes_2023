@@ -1,15 +1,16 @@
+1)
 n = input('Informe seu nome completo: ')
 print(n)
 
 --------------------------------------------------------------------------
-
+2)
 a = 5
 b = 3
 soma = a * b
 print(soma)
 
 ---------------------------------------------------------------------------
-
+3)
 a = 5
 b = 3
 c = 5
@@ -17,6 +18,7 @@ soma = (a + b + c)
 print(soma)
 
 --------------------------------------------------------------------------
+4)
 
 while True:
     n1 = input('Informe o numero: ')
@@ -41,6 +43,7 @@ while True:
         print('Operador Inválido!')
 
 ------------------------------------------------------------------------
+5)
 
 contador = 1
 
@@ -54,6 +57,7 @@ for contador in range(1, 11):
     print(contador)
 
 -------------------------------------------------------------------------
+6)
 
 pares = 0
 impares = 0
@@ -70,6 +74,9 @@ print('Quantidade de números impares é:', impares)
 
 print('')
 
+---------------------------------------------------------------------------
+7)
+
 pares = 0
 impares = 0
 
@@ -83,6 +90,7 @@ print('Quantidade de números pares é:', pares)
 print('Quantidade de números impares é:', impares)
 
 # -----------------------------------------------------------------------------------------------------
+8)
 
 a = float(input('Informe um valor: '))
 b = float(input('Informe um valor: '))
@@ -101,6 +109,7 @@ else:
     print('As raizes da equação são:', raiz1, 'e', raiz2)
 
 # -----------------------------------------------------------------------
+9)
 
 import math
 
@@ -121,6 +130,8 @@ else:
     print('As raizes da equação são:', raiz1, 'e', raiz2)
 
 # ------------------------------------------------------------------------------------
+10)
+
 import math
 
 
@@ -178,4 +189,22 @@ for letra in s_invertida:
 print(vogais_encontrada)
 
 # ---------------------------------------------------------------------------------------
+11)
+
+import phonenumbers
+
+
+nome = 'João'
+sob = 'da Silva'
+idade = '25'
+cidade = 'São Paulo'
+telefone = '1133333333'
+
+telefone_ajustado = phonenumbers.parse(telefone, 'BR')
+telefone = phonenumbers.format_number(telefone_ajustado, phonenumbers.PhoneNumberFormat.NATIONAL)
+
+print('Nome:', nome + ' ' + sob)
+print('Telefone:', telefone)
+print('Idade:', idade)
+print('Cidade:', cidade)
 
