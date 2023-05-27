@@ -1,0 +1,270 @@
+# Questao 1
+
+# lista_pessoas = []
+#
+# while True:
+#     pessoa = {}
+#
+#     nome = input('Informe o nome:  (ou "sair para encerrar"): ')
+#     if nome.lower() == 'sair':
+#         break
+#
+#     sexo = input('Informe o sexo: ')
+#     idade = int(input('Informe a idade:'))
+#
+#     pessoa['nome'] = nome
+#     pessoa['sexo'] = sexo
+#     pessoa['idade'] = idade
+#
+#     lista_pessoas.append(pessoa)
+#
+#     print(lista_pessoas)
+#     for pessoa in lista_pessoas:
+#         print('Nome:', pessoa['nome'])
+#         print('Sexo:', pessoa['sexo'])
+#         print('Idade:', pessoa['idade'])
+#         print()
+#
+#
+# quantidade_pessoas = len(lista_pessoas)
+# print('Quantidade de pessoas cadastradas: ', quantidade_pessoas)
+#
+#
+# soma_idades = 0
+# for pessoa in lista_pessoas:
+#     soma_idades += pessoa['idade']
+#
+# media_idade = soma_idades / quantidade_pessoas
+# print('A media da idade das pessoas cadastradas e: ', media_idade)
+#
+# lista_mulheres = []
+# for mulher in lista_pessoas:
+#     if mulher['sexo'].lower() == 'feminino':
+#         lista_mulheres.append(mulher)
+#
+# print('Lista de Mulheres: ')
+# for mulher in lista_mulheres:
+#     print('Nome: ', mulher['nome'])
+#     print('Sexo: ', mulher['sexo'])
+#     print('Idade: ', mulher['idade'])
+#     print()
+#
+# idade_acima_media = []
+#
+# for pessoa in lista_pessoas:
+#     if pessoa['idade'] > media_idade:
+#         idade_acima_media.append(pessoa)
+#
+# print('Pessoas com idade acima da media: ')
+# for pessoa in idade_acima_media:
+#     print('Nome: ', pessoa['nome'])
+#     print('Sexo: ', pessoa['sexo'])
+#     print('Idade: ', pessoa['idade'])
+#     print()
+
+# Questao 1 com list comprehension
+
+# lista_pessoas = []
+#
+# while True:
+#     pessoa = {}
+#
+#     nome = input('Informe o nome (ou digite "sair" para encerrar: ')
+#     if nome.lower() == "sair":
+#         print('Programa encerrado!')
+#         break
+#     sexo = input('Informe o sexo: ')
+#     idade = int(input('informe a idade: '))
+#
+#     pessoa['nome'] = nome
+#     pessoa['sexo'] = sexo
+#     pessoa['idade'] = idade
+#
+#     lista_pessoas.append(pessoa)
+#
+#     print(lista_pessoas)
+#     print('Nome: ', pessoa['nome'])
+#     print('Sexo: ', pessoa['sexo'])
+#     print('Idade:', pessoa['idade'])
+#     print()
+#
+# quantidade_pessoas = len(lista_pessoas)
+# print('A Quantidade de pessoas cadastradas sao: ', quantidade_pessoas)
+#
+# soma_idade = sum([pessoa['idade'] for pessoa in lista_pessoas])
+# media_idade = soma_idade / quantidade_pessoas
+# print('A media das idades sao: ', media_idade)
+#
+#
+# lista_mulher = [mulher for mulher in lista_pessoas if mulher['sexo'].lower() == 'feminino']
+# for mulher in lista_mulher:
+#     print('Nome:', mulher['nome'])
+#     print('Sexo: ', mulher['sexo'])
+#     print('Idade: ', mulher['idade'])
+#     print()
+#
+# idade_acima_media = [pessoa for pessoa in lista_pessoas if pessoa['idade'] > media_idade]
+# for pessoa in idade_acima_media:
+#     print('Nome: ', pessoa['nome'])
+#     print('Sexo: ', pessoa['sexo'])
+#     print('Idade: ', pessoa['idade'])
+#
+# print(lista_mulher)
+
+# ------------------------------------------------------------------------------------------------------------
+# Questao 2
+
+# numeros = [1, 2, 3, 4]
+# print(numeros[2])   # Imprime o numero 3 na ordem 0, 1, 2, 3
+
+# ------------------------------------------------------------------------------------------------------------
+# Questao 3
+
+# dados = ('Aluno', 'universidade', 8.5, 20)
+# w, x, y, z = dados
+# print(type(w))
+# print(type(x))
+# print(type(y))
+# print(type(z))
+# print()
+# print(w)
+# print(x)
+# print(y)
+# print(z)
+
+# -------------------------------------------------------------------------------------------------------------
+
+# Questao 4
+
+# setx = {'apple', 'mango'}
+# sety = {'mango', 'orange'}
+# setz = {'mango'}
+#
+# unindo = setx | sety | setz
+# print(unindo)
+#
+# elemento_comun = setx & sety & setz
+# print(elemento_comun)
+#
+# if setz.issubset(setx and sety):
+#     print(f'setz e subconjunto de setx e sety')
+# else:
+#     print('setz nao e subconjunto de setx e sety')
+#
+# elemento_setx = setx - sety
+# print('Elementos presentes apenas no setx que nao tem no sety: ')
+# for elemento in elemento_setx:
+#     print(elemento)
+
+
+# exemplo com difference():
+
+# setx = {'apple', 'mango', 'orange'}
+# sety = {'mango', 'orange'}
+# elemento_setx = setx.difference(sety)
+# print('Elementos presentes apenas no setx que nao estao no sety: ')
+# for elemento in elemento_setx:
+#     print(elemento)
+
+
+# -------------------------------------------------------------------------------------------------------------
+
+# Questao 5
+
+# dicionarioordenado = {'color 1': 'Red', 'color 2': 'Green', 'color 3': 'Blue'}
+# print(dicionarioordenado)
+#
+# novo_elemento = {'color 4': 'Orange'}
+# dicionarioordenado = {**novo_elemento, **dicionarioordenado}
+#
+# print(dicionarioordenado)
+
+# -------------------------------------------------------------------------------------------------------------
+
+# Questao 6
+
+# def right_justify(s):
+#     espacos = ' ' * (70 - len(s))
+#     resultado = espacos + s
+#     print(resultado)
+#
+#
+# texto = 'monty'
+# right_justify(texto)
+
+
+# -------------------------------------------------------------------------------------------------------
+
+# Questao 7
+
+# def do_twice(f, valor):
+#     f(valor)
+#     f(valor)
+#
+#
+# def print_spam(valor):
+#     print(valor)
+#
+#
+# do_twice(print_spam, 12)
+
+# ---------------------------------------------------------------------------------------------------------
+
+# Questao 8
+
+import math
+
+
+def imprimir_mensagem(mensagem):
+    print(mensagem)
+
+
+def multiplicar_numero(x, y):
+
+     return math.prod([x * y])
+
+
+mensagens = input('Informe a mensagem: ')
+
+num1 = int(input('Informe o primeiro numero: '))
+num2 = int(input('Informe o segundo numero: '))
+
+imprimir_mensagem(mensagens)
+
+resultado = multiplicar_numero(num1, num2)
+print('O resultado da multiplicacao e: ', resultado)
+
+# ------------------------------------------------------------------------------------------------------
+
+# Questao 9
+
+from collections import deque
+
+
+def ehDigito(caractere):
+    return caractere.isdigit()
+
+
+def lista_encadeada(lista):
+    fila_letras = deque()
+    pilha_digitos = []
+
+    for caractere in lista:
+        if ehDigito(caractere):
+            pilha_digitos.append(caractere)
+        else:
+            fila_letras.append(caractere)
+
+    resultado = []
+    while fila_letras:
+        resultado.append(fila_letras.popleft())
+
+    while pilha_digitos:
+        resultado.append(pilha_digitos.pop())
+
+    return resultado
+
+
+listas_encadeadas = ['a', '1', 'e', '5', 't', '7', 'w', '8', 'g']
+resultado = lista_encadeada(listas_encadeadas)
+print(resultado)
