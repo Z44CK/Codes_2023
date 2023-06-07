@@ -1,0 +1,11 @@
+dados = ('Aluno', 'universidade', 8.5, 20)
+w, x, y, z = dados
+print(type(w))
+print(type(x))
+print(type(y))
+print(type(z))
+print()
+print(w)
+print(x)
+print(y)
+print(z)
