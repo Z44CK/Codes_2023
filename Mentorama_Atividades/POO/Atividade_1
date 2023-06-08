@@ -1,0 +1,34 @@
+# Polimorfismo
+class FormaGeometrica:
+    def calc_area(self):
+        pass
+
+
+class Quadrado(FormaGeometrica):
+    def __init__(self, base):
+        self.base = base
+
+    def calc_area(self):
+        return self.base * self.base
+
+
+class Circulo(FormaGeometrica):
+    def __init__(self, raio):
+        self.raio = raio
+
+    def calc_area(self):
+        return self.raio * self.raio * 3.14
+
+
+quad1 = Quadrado(2)
+quad2 = Quadrado(5)
+
+cir1 = Circulo(1)
+cir2 = Circulo(4)
+formas_geometricas = [quad1, quad2, cir1, cir2]
+
+soma = 0
+for forma in formas_geometricas:
+    soma = soma + forma.calc_area()
+
+    print('A area foi de {}'.format(soma))
