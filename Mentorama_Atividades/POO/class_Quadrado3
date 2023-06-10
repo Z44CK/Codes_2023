@@ -1,0 +1,35 @@
+# Criando uma classe que da a esolha ao usuario mudar o tamanho do quadrado.
+class Quadrado:
+    def __init__(self, tamanho_lado):
+        self.tamanho_lado = tamanho_lado
+        self.tamanho_lado_atual = 55.5
+        print('O tamanho atual e: ', self.tamanho_lado_atual)
+
+    def mudar_valor_lado(self):
+        novo_tamanho = float(input('Informe um tamanho: '))
+        if self.tamanho_lado != novo_tamanho:
+            self.tamanho_lado = novo_tamanho
+            print('Novo tamanho do lado e:', novo_tamanho)
+
+# você chama o método retornar_valor_lado, que imprime o valor do lado do quadrado formatado com duas casas decimais e retorna o valor.
+    def retornar_valor_lado(self):
+        print(f'O valor do lado e de {self.tamanho_lado:.2f}')
+        return self.tamanho_lado
+
+
+# você chama o método calcula_area, que calcula a área do quadrado (lado ao quadrado) e imprime o resultado formatado com duas casas decimais.
+    def calcula_area(self):
+        print(f'O area do quadrado e: {self.tamanho_lado ** 2:.2f}')
+
+
+# instância t1 da classe Quadrado com um tamanho inicial de 0.
+t1 = Quadrado(0)
+
+t1.mudar_valor_lado()
+print()
+t1.retornar_valor_lado()
+print()
+t1.calcula_area()
+
+# Dessa forma, o código irá solicitar ao usuário que insira um novo tamanho para o lado do quadrado, imprimirá o novo tamanho, 
+# imprimirá o valor do lado formatado e calculará e imprimirá a área formatada do quadrado.
