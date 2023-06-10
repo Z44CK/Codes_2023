@@ -1,0 +1,35 @@
+# Criando uma classe bola, onde o metodo (trocacor) permite o usuário escolher a cor nas opções
+# O metodo mostracor, irá mostrar a cor escolhida pelo usuario, e o objeto "b1" iniciado com 'Nenhuma cor foi escolhoda'. Caso o usuário informe algum valor
+# que não está presente na opção de escolha.
+class Bola:
+    def __init__(self, cor, circunferencia, material):
+        self.cor = cor
+        self.circunferencia = circunferencia
+        self.material = material
+
+    def trocacor(self):
+        nova_cor = input('Escolha a cor da bola: [1]-Azul, [2]-Vermelho, [3]-Rosa, [4]-Branco: ')
+        if nova_cor == '1':
+            self.cor = 'Azul'
+            print('A cor escolhida foi Azul')
+        elif nova_cor == '2':
+            self.cor = 'Vermelho'
+            print('A cor escolhida foi Vermelho')
+        elif nova_cor == '3':
+            self.cor = 'Rosa'
+            print('A cor escolhida foi Rosa')
+        elif nova_cor == '4':
+            self.cor = 'Branco'
+            print('A cor escolhida foi')
+        else:
+            print('Informe um valor valido!')
+
+    def mostracor(self):
+        print('A cor atual da bola e:', self.cor)
+
+
+b1 = Bola('Nenhuma cor foi escolhida', 10, 'Borracha')
+
+b1.trocacor()
+print()
+b1.mostracor()
