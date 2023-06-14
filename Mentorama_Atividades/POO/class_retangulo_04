@@ -1,0 +1,62 @@
+class Retangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+        print(f'O valor atual da base é: {self.base:.2f}, O valor atual da altura é: {self.altura:.2f}')
+
+    def mudar_valor_lados(self, nova_base1, nova_altura1):
+        self.base = nova_base1
+        self.altura = nova_altura1
+
+    def retornar_valor_lados(self):
+        print(f'O novo valor da base é: {self.base:.2f}, O novo valor da altura é: {self.altura:.2f}')
+        return self.base, self.altura
+
+    def calc_area(self):
+        area = self.base * self.altura
+        print(f'O calculo da areá é: {area:.2f}')
+        return area
+
+    def calc_perimetro(self):
+        perimetro = 2 * (self.base + self.altura)
+        print(f'O calculo do perimetro é: {perimetro:.2f}')
+        return perimetro
+
+
+def receber_medidas_local():
+    largura = float(input('Informe a largura do local em metros: '))
+    comprimento = float(input('Informe o comprimento do local em metros: '))
+    altura = float(input('Informe a altura do local em metros: '))
+    return largura, comprimento, altura
+
+
+def calcula_piso_e_rodapes(local):
+    largura, comprimento, altura = local
+
+    retangulo_piso = Retangulo(0.25, 0.25)
+    retangulo_parede = Retangulo(largura, altura)
+
+    area_piso = retangulo_piso.calc_area()
+    area_parede = retangulo_parede.calc_area()
+    perimetro_parede = retangulo_parede.calc_perimetro()
+
+    qtd_pisos = area_parede / area_piso
+    qtd_rodapes = perimetro_parede / comprimento
+
+    return qtd_pisos, qtd_rodapes
+
+
+largura, comprimento, altura = receber_medidas_local()
+medidas_local = (largura, comprimento, altura)
+
+
+retangulo = Retangulo(15, 15)
+print()
+nova_base, nova_altura = calcula_piso_e_rodapes(medidas_local)
+retangulo.mudar_valor_lados(nova_base, nova_altura)
+print()
+retangulo.retornar_valor_lados()
+print()
+retangulo.calc_area()
+print()
+retangulo.calc_perimetro()
