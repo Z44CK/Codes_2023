@@ -1,0 +1,34 @@
+class Carro:
+    def __init__(self, marca, modelo, cor):
+        self.marca = marca
+        self.modelo = modelo
+        self.cor = cor
+
+    def acelerar(self):
+        print(f'O veiculo {self.modelo} esta acelerando!')
+
+    def frear(self):
+        print(f'O veiuclo {self.modelo} esta freando!')
+
+    def mostrar_dados(self):
+        print('Dados dos veiculos: ')
+        print(f'Marca: {self.marca}')
+        print(f'Modelo: {self.modelo}')
+        print(f'Cor: {self.cor}')
+
+
+veiculo1 = Carro('Wolksvagem', 'Golf-GTI', 'Branco')
+veiculo1.acelerar()
+veiculo1.acelerar()
+veiculo1.frear()
+veiculo1.frear()
+print()
+veiculo1.mostrar_dados()
+print()
+veiculo2 = Carro('BMW', '320i', 'Cinza')
+veiculo2.acelerar()
+veiculo2.acelerar()
+veiculo2.frear()
+veiculo2.frear()
+print()
+veiculo2.mostrar_dados()
