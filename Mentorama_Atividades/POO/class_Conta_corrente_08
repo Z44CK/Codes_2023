@@ -1,0 +1,40 @@
+class Conta_corrente:
+    def __init__(self, num_conta, nome_correntista, saldo=0):
+        self.num_conta = num_conta
+        self.nome_correntista = nome_correntista
+        self.saldo = saldo
+
+    def alteranome(self, novo_nome):
+        self.nome_correntista = novo_nome
+        print('Nome do titular alterado para:', novo_nome)
+
+    def deposito(self, valor1):
+        self.saldo += valor1
+        print(f'Depósito de R$:{valor1} realizado. Saldo atual é de R$:{self.saldo}')
+
+    def saque(self, valor2):
+        self.saldo -= valor2
+        print(f'Saque de R$:{valor2} realizado. Saldo atual é de R$:{self.saldo}')
+
+    def informacoes_conta(self):
+        print(f'Nome do Titular:{self.nome_correntista}')
+        print(f'Numero da conta:{self.num_conta}')
+        print(f'Saldo R$:{self.saldo}')
+
+
+conta = Conta_corrente(1000, 'João')
+conta.informacoes_conta()
+print()
+conta.deposito(255)
+conta.deposito(315.55)
+conta.deposito(200.75)
+print()
+conta.saque(150)
+print()
+conta.alteranome('Maria')
+print()
+conta.informacoes_conta()
+print()
+conta.deposito(3254.65)
+print()
+conta.informacoes_conta()
