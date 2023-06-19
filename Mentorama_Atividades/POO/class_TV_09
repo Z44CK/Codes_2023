@@ -1,0 +1,37 @@
+class Tv:
+    def __init__(self, canal, volume1=0, volume2=0):
+        self.canal = canal
+        self.volume1 = volume1
+        self.volume2 = volume2
+
+    def mudarcanal(self, novo_canal):
+        self.canal = novo_canal
+        print(f'Canal {self.canal}')
+        if self.canal > 100:   # Caso o usuário informe um canal superior a cem, a tv ficara fora do ar, pois são possiveis apenas cem canais.
+            print('Fora do ar! Existem apenas cem canais disponiveis')
+
+    def aumentarvolume(self, maisvolume):
+        self.volume1 += maisvolume
+        print(f'Volume: +{self.volume1}')
+        if self.volume1 > 50:   # Caso o volume ultrapasse o limite de 50, irá imprimir a mensagem de segurança do canal
+            print('O volume ultrapassou o limite seguro, pode ser prejudicial a saude!')
+
+    def diminuirvolume(self, menosvolume):
+        self.volume2 -= menosvolume
+        print(f'Volume: {self.volume2}')
+
+
+tv = Tv(2)
+
+tv.aumentarvolume(1)
+tv.aumentarvolume(1)
+tv.aumentarvolume(1)
+tv.aumentarvolume(1)
+print()
+tv.diminuirvolume(1)
+tv.diminuirvolume(1)
+tv.diminuirvolume(1)
+print()
+tv.mudarcanal(6)
+print()
+tv.mudarcanal(101)
