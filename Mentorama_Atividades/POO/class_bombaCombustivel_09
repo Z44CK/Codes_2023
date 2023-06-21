@@ -1,0 +1,74 @@
+class bombaCombustivel:
+    def __init__(self, tipocombustivel, valorlitro, qtdcombustivel):
+        self.tipocomcustivel = tipocombustivel
+        self.valorlitro = valorlitro
+        self.qtdcombustivel = qtdcombustivel
+
+    def abastercerporvalor(self):
+        valorlitro = 5.21
+        valor_abastecer = float(input('Informe a quantidade a ser abastecida em R$: '))
+        qtdlitros = valor_abastecer / valorlitro
+        print(f'Quantidade de litros a ser abastecida:{qtdlitros:.2f} Litros')
+        self.alterarquantidadecombustivel(qtdlitros)
+
+    def abastecerporlitro(self):
+        valorlitro = 5.21
+        qtd_abastecer = float(input('Informe a quantidade a abastecer por litro: '))
+        valorpag = qtd_abastecer * valorlitro
+        print(f'O valor a ser pago R$:{valorpag:.2f}')
+        self.alterarquantidadecombustivel(qtd_abastecer)
+
+    def alterarvalor(self, novo_valor):
+        self.valorlitro = novo_valor
+        print(f'O valor do combustivel foi alterado para: R${novo_valor:.2f}')
+
+    def alterarcombustivel(self, outrocombustivel):
+        self.tipocomcustivel = outrocombustivel
+
+    def alterarquantidadecombustivel(self, novaqtdcombustivel):
+        if novaqtdcombustivel <= self.qtdcombustivel:
+            self.qtdcombustivel -= novaqtdcombustivel
+            print(f'Quantidade de combustivel alterada:-{novaqtdcombustivel} Litros')
+            print(f'Quantidade de combustivel na bomba: {self.qtdcombustivel} Litros')
+        else:
+            print('Quantidade insuficiente de combustivel na bomba!')
+
+
+bomba = bombaCombustivel('Gasolina', 5.21, 5000)
+print()
+bomba.alterarvalor(6.00)
+print()
+encerrar = False
+while encerrar is False:
+    combustivel = input('Escolha qual combustivel abastecer:\n(1)-Alcool:\n'
+                        '(2)-Gasolina: \n(3)-Diesel:\n(4)-Sair!\nOpção: ')
+    if combustivel == '4':
+        print('Finalizado!')
+        break
+    elif combustivel == '1':
+        bomba.alterarcombustivel('Alcool')
+        print('O tipo de combustivel escolhido foi: Alcool')
+    elif combustivel == '2':
+        bomba.alterarcombustivel('Gasolina')
+        print('O tipo de combustivel escolhido foi: Gasolina')
+    elif combustivel == '3':
+        bomba.alterarcombustivel('Diesel')
+        print('O tipo de combustivel escolhido foi: Diesel')
+    else:
+        print('Escolha um tipo válido!')
+
+    opcao = input('Escolha a forma de abastecer:\n (1)-Valor em R$? \n'
+                  ' (2)-Quantidade em litros?\n (3)-Para encerrar! \n Opção [1] - [2] - [3]: \n')
+
+    if opcao == '3':
+        encerrar = True
+        print('Finalizado com sucesso!!')
+        break
+    elif opcao == '1':
+        bomba.abastercerporvalor()
+
+    elif opcao == '2':
+        bomba.abastecerporlitro()
+
+    else:
+        print('Opção inválida!')
