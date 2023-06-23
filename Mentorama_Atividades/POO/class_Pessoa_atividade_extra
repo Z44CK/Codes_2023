@@ -1,0 +1,116 @@
+class Pessoa:
+    def __init__(self, nome, cpf, rg, endereco, telefone):
+        self.nome = nome
+        self.cpf = cpf
+        self.rg = rg
+        self.endereco = endereco
+        self.telefone = telefone
+
+    def alterardados(self, novos_dados):
+        self.nome = novos_dados
+        self.cpf = novos_dados
+        self.rg = novos_dados
+        self.endereco = novos_dados
+        self.telefone = novos_dados
+
+    def mostrardados(self):
+        print('Nome:', self.nome)
+        print('CPF:', self.cpf)
+        print('RG:', self.rg)
+        print('Endereço:', self.endereco)
+        print('Telefone:', self.telefone)
+
+
+class Funcionario(Pessoa):
+    def __init__(self, nome, cpf, rg, endereco, telefone, salario, cargo, dataadmissao):
+        super().__init__(nome, cpf, rg, endereco, telefone)
+        self.salario = salario
+        self.cargo = cargo
+        self.dataadmissao = dataadmissao
+
+    def alterardado(self):
+        novo_salario = float(input('Informe o valor do novo salário: '))
+        if novo_salario >= self.salario:
+            self.salario = novo_salario
+            print(f'O salario foi alterado para:{novo_salario:.2f}')
+        else:
+            print('Não foi possivel alterar o salario, pois ele é menor que o salário atual!')
+
+        novo_cargo = input('Informe o novo cargo: ')
+        if novo_cargo != self.cargo:
+            self.cargo = novo_cargo
+            print(f'O novo cargo é: {novo_cargo}')
+        else:
+            print('Cargo não pode ser alterado, atualize o nivel do mesmo!')
+
+        nova_data_admissao = input('Informe a data de admissão: ')
+        if nova_data_admissao != self.dataadmissao:
+            self.dataadmissao = nova_data_admissao
+            dia, mes, ano = nova_data_admissao.split('/')
+            print(f'A nova data de admissão é: Dia: {dia}, Mês: {mes}, Ano: {ano}')
+        else:
+            print('A data de admissão está igual, favor informar uma nova data de admissão ou promoção!')
+
+
+class Cliente(Pessoa):
+    def __init__(self, nome, cpf, rg, endereco, telefone, conta, saldo, limite):
+        super().__init__(nome, cpf, rg, endereco, telefone)
+        self.conta = conta
+        self.saldo = saldo
+        self.limite = limite
+
+    def sacar(self):
+        print(f'Saldo atual em conta é de: {self.saldo}')
+        saque = float(input('Informe o valor a ser sacado em R$: '))
+        if saque > self.limite:
+            print(f'O valor permitido para saque é de: R${self.limite:.2f}')
+        elif saque <= self.saldo:
+            self.saldo -= saque
+            print(f'Valor do saque foi: :{saque:.2f}')
+            print(f'Saldo atual:{self.saldo}')
+        else:
+            print('Saldo insuficiente para realizar o saque!')
+
+    def depositar(self):
+        deposito = float(input('Valor a ser depositado em R$: '))
+        self.saldo += deposito
+        print(f'O valor depositado é:{deposito:.2f} ')
+        print(f'O novo saldo é de:`{self.saldo:.2f}')
+
+    def alteradados(self, nome, cpf, rg, endereco, telefone, conta, saldo, limite):
+        super().alterardados((nome, cpf, rg, endereco, telefone))
+        self.conta = conta
+        if conta != self.conta:
+            self.conta = conta
+            print(conta)
+
+        if saldo != self.saldo:
+            self.saldo = saldo
+            print(f'Saldo atual é: {self.saldo:.2f}')
+
+        if limite > self.limite:
+            self.limite = limite
+            print(f'Seu limite é de: {self.limite:.2f}')
+
+
+p1 = Pessoa('João', '032.456.879-32', '321.456.898-12', 'Rua Nova', '(23) 98723-3245')
+print()
+p1.mostrardados()
+print()
+c1 = Cliente('Jose', '321.546.897-89', '456.987.781-21', 'Rua velha', '(56) 32145-6578', '0001', 3000, 2500)
+print()
+c1.depositar()
+print()
+c1.sacar()
+print()
+f1 = Funcionario('Henrique', '123.215.567-89', '322.456.879-12', 'Rua Avenue', '(25) 32156-5687', 2564.12,
+                 'Administrador', '12/05/2019')
+print()
+f1.alterardado()
+print()
+f1.mostrardados()
+print()
+c1.mostrardados()
+print()
+c1.alterardados({'Nome:': 'Alfredo', 'CPF:': '123.321.456-23', 'RG:': '215.123.564-54', 'Endereço:': 'Avenida Jussara',
+                 'Telefone:': '(32) 32232-2345'})
