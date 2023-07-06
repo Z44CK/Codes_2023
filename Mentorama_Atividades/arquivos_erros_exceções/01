@@ -1,0 +1,44 @@
+def validar_ip(ip):
+    partes = ip.split('.')
+    if len(partes) != 4:
+        return False
+    for parte in partes:
+        if not parte.isdigit() or int(parte) <= 0 or int(parte) > 230:
+            return False
+    return True
+
+
+with open('ip.txt', 'r') as arquivo:
+    texto = arquivo.read()
+
+    novo_texto = texto.upper()
+
+
+arquivo = 'ip.txt'
+arquivo_saida = 'relatorio_ip.txt'
+
+ips_validos = []
+ips_invalidos = []
+
+with open(arquivo, 'r') as entradas:
+    linhas = entradas.readlines()
+
+    # Validar cada linha do arquivo de entrada como um endereço IP
+    for linha in linhas:
+        ip = linha.strip()
+        if validar_ip(ip):
+            ips_validos.append(ip)
+        else:
+            ips_invalidos.append(ip)
+
+
+with open(arquivo_saida, 'w') as saida:
+    saida.write('[Endereços válidos]\n')
+    for ip in ips_validos[:5]:
+        saida.write(ip + '\n')
+
+    saida.write('\n[Endereços inválidos]\n')
+    for ip in ips_invalidos[:5]:
+        saida.write(ip + '\n')
+
+print('Relatorio gerado com exito!')
