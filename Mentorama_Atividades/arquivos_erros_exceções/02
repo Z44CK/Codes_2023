@@ -1,0 +1,22 @@
+# Quando falamos sobre erros e exceções, algumas fontes de informação consideram
+# que no processo de depuração, podemos encontrar três tipos de erro: erro de sintaxe,
+# erro de tempo de execução e erro semântico. Defina o conceito de cada um deles.
+
+# --> Erro de sintaxe? 
+# Erros de sintaxe são facéis de serem corrigidos, uma vez que você entenda qual é
+# o problema. Infelizmente as mensagens de erro não ajudam muito os iniciantes, os erros de sintaxe
+# normalmente ocorrem quando se dá um tab a mais no codigo ou quando o codigo não está identado corretamente
+# também pode ser por ter esquecido de por : pontos ao final do cabeçalho de cada comando composto, ou aspas
+# incorretos, ou falta de fechar algum parentese.
+
+# ---------------------------------------------------------------------------------
+# --> Erro de tempo de execução? 
+# Erros de tempo de execução acontecem quando o programa esta em execução com uma
+# recursão infinita excedendo a maxima profndidade da recursão
+
+# ---------------------------------------------------------------------------------
+# --> Erro semântico? 
+# Os erros semãnticos são mais dificeis de serem corrigidos, porque o compilador e nem o
+# interpretador Python fornecem informações sobre o que está errado. Em outras palavras o programa vai fazer o que
+# pedimos para ele fazer e não o que gostariamos que fizessem, cabe a nós como programadores entender e identificar
+# qual o erro lógico no programa que o fez funcionar de maneira que não queriamos.
