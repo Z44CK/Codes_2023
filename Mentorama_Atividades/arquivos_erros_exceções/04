@@ -1,0 +1,8 @@
+a = int(input('Informe um valor: '))
+b = int(input('Informe um valor: '))
+try:
+    soma = a / b
+    print(f'{soma:.2f}')
+
+except ZeroDivisionError as nao_pode_dividir_por_zero:
+    print('Erro: Divisão por zero')
