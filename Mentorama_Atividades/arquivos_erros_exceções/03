@@ -1,0 +1,9 @@
+# Levantando excessões de tipo de valor! 
+try:
+    nome = str(input('Informe o nome completo: '))
+    if nome.isalpha() and nome.lower() and nome.upper():
+        print(nome)
+    else:
+        raise TypeError('Dados incorretos, informe apenas letrass!')
+except TypeError as erro_de_tipo_de_dados:
+    print(erro_de_tipo_de_dados)
