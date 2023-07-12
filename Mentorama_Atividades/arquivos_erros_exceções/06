@@ -1,0 +1,24 @@
+while True:
+    try:
+        n1 = input('Informe um valor numerico: ')
+        operador = input('Informe o operador matemático: ')
+        n2 = input('Informe um valor numerico: ')
+
+        n1 = float(n1)
+        n2 = float(n2)
+        if operador == '+':
+            print(n1 + n2)
+            break
+        elif operador == '-':
+            print(n1 - n2)
+            break
+        elif operador == '*':
+            print(n1 * n2)
+            break
+        elif operador == '/':
+            print(f'{n1 / n2:.2f}')
+            break
+        else:
+            print('Operador Inválido!')
+    except ValueError as valor_incorreto:
+        print('Error: erro de valor causado pelo usuario, informar apenas numeros!')
