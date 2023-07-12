@@ -1,0 +1,10 @@
+try:
+    a = float(input('Informe um valor: '))
+    b = float(input('Informe um valor: '))
+    c = float(input('Informe um valor: '))
+
+    soma = a + b + c
+    print(f'A soma é: {soma:.2f}')
+
+except ValueError as Erro_de_valor:
+    print('Erro: informe apenas valores numericos!!')
