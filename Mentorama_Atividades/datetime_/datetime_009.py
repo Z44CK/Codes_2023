@@ -1,5 +1,5 @@
-// Faça um programa para calcular a diferença de dias entre antes de ontem
-// e depois de amanhã.
+# Faça um programa para calcular a diferença de dias entre antes de ontem
+# e depois de amanhã.
 
 from datetime import datetime, timedelta
 
