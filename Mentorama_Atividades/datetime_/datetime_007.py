@@ -1,5 +1,5 @@
-// Programa para subtrair 8 dias da data atual:
-// data atual 25/01/2021, data esperada 17/01/2021
+# Programa para subtrair 8 dias da data atual:
+# data atual 25/01/2021, data esperada 17/01/2021
 
 import datetime
 
