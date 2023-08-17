@@ -1,5 +1,5 @@
-// Calcula o numero de dias entre dois datetimes
-// a diferença entre os dias deve ser de 10 dias.
+# Calcula o numero de dias entre dois datetimes
+# a diferença entre os dias deve ser de 10 dias.
 
 from datetime import datetime, timedelta
 
