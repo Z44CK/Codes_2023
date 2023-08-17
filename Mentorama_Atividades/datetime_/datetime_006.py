@@ -1,5 +1,5 @@
-// Escreva um programa python capaz de conveter uma string em data e hora.
-// string de exemplo: 01 janeiro de 2021 13h53, resultado esperado 2021-01-01 13:53:00
+# Escreva um programa python capaz de conveter uma string em data e hora.
+# string de exemplo: 01 janeiro de 2021 13h53, resultado esperado 2021-01-01 13:53:00
 
 from datetime import datetime
 
