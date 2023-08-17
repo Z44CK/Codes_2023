@@ -1,12 +1,12 @@
-// Escreva scripts para mostrar os diversos formatos de data e tempo conforme abaixo:
-// Data e hora atual
-// Ano atual
-// Mês atual
-// Numero da semana do ano
-// Dia atual da semana
-// Dia do ano
-// Dia do mês
-// Dia da semana
+# Escreva scripts para mostrar os diversos formatos de data e tempo conforme abaixo:
+# Data e hora atual
+# Ano atual
+# Mês atual
+# Numero da semana do ano
+# Dia atual da semana
+# Dia do ano
+# Dia do mês
+# Dia da semana
 
 import time
 import datetime
