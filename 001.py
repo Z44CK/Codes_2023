@@ -1,4 +1,4 @@
-Programa que pede três valores, e a soma dos valores deve informar se pode se um triangulo equilátero, isósceles, escalno ou se não forma triangulo algum.
+# Programa que pede três valores, e a soma dos valores deve informar se pode se um triangulo equilátero, isósceles, escalno ou se não forma triangulo algum.
 
 
 lado1 = float(input('Informe primeiro valor: '))
