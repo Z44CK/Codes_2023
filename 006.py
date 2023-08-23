@@ -1,4 +1,4 @@
-Verifica a somatoria dos 2 inputs, caos sejam par/impar, positivo/negativo, inteiro ou decimal...
+# Verifica a somatoria dos 2 inputs, caos sejam par/impar, positivo/negativo, inteiro ou decimal...
 
 n1 = float(input('Informe o primeiro valor: '))
 n2 = float(input('Informe o segundo valor: '))
@@ -16,7 +16,6 @@ else:
     print('inteiro' if n1 == round(n1) and n2 == round(n2, 2) else 'decimal')
     
 # O código abaixo está refatorado, de forma mais concisa
-############################################################################################################
 
 n1 = float(input('Informe o primeiro valor: '))
 n2 = float(input('Informe o segundo valor: '))
