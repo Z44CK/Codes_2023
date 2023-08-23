@@ -1,5 +1,5 @@
-Quiz - Programa que gera 5 perguntas de sim ou não, caso as respostas sejam positivas mais de uma vez o programa executa uma condição abaixo.
-caso não, o programa printa inocente na tela e finaliza.
+# Quiz - Programa que gera 5 perguntas de sim ou não, caso as respostas sejam positivas mais de uma vez o programa executa uma condição abaixo.
+# caso não, o programa printa inocente na tela e finaliza.
 
 
 resposta = 0
