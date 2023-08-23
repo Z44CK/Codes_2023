@@ -1,11 +1,11 @@
-Pede o valor de duas notas e calcule sua média, A atribuição de conceitos obedece à tabela abaixo:
-  Média de Aproveitamento  Conceito
-  Entre 9.0 e 10.0        A
-  Entre 7.5 e 9.0         B
-  Entre 6.0 e 7.5         C
-  Entre 4.0 e 6.0         D
-  Entre 4.0 e zero        E
-  Existe outras maneiras de resolver esse excercicio, essa foi a primeira forma que encontrei!! 
+# Pede o valor de duas notas e calcule sua média, A atribuição de conceitos obedece à tabela abaixo:
+# Média de Aproveitamento  Conceito
+# Entre 9.0 e 10.0        A
+# Entre 7.5 e 9.0         B
+# Entre 6.0 e 7.5         C
+# Entre 4.0 e 6.0         D
+# Entre 4.0 e zero        E
+# Existe outras maneiras de resolver esse excercicio, essa foi a primeira forma que encontrei!! 
 
 nota1 = float(input('Informe a nota 1: '))
 nota2 = float(input('Informe a nota 2: '))
