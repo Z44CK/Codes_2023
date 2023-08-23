@@ -1,4 +1,4 @@
-#Codigo para criar uma lista em python, onde você insere, lista e deleta as informações.
+# Codigo para criar uma lista em python, onde você insere, lista e deleta as informações.
 
 import os
 
