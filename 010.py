@@ -1,7 +1,7 @@
-Supondo que a população de um país A seja da ordem de 80000 habitantes
-com uma taxa anual de crescimento de 3% e que a população de B seja 200000 habitantes 
-com uma taxa de crescimento de 1.5%. Faça um programa que calcule e escreva o número de anos necessários para que a população do
-país A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
+# Supondo que a população de um país A seja da ordem de 80000 habitantes
+# com uma taxa anual de crescimento de 3% e que a população de B seja 200000 habitantes 
+# com uma taxa de crescimento de 1.5%. Faça um programa que calcule e escreva o número de anos necessários para que a população do
+# país A ultrapasse ou iguale a população do país B, mantidas as taxas de crescimento.
 
  populacao_a = 80000
  populacao_b = 2000000
@@ -21,7 +21,7 @@ país A ultrapasse ou iguale a população do país B, mantidas as taxas de cres
   
 
 
-Altere o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
+# Alterando o programa anterior permitindo ao usuário informar as populações e as taxas de crescimento iniciais. Valide a entrada e permita repetir a operação.
 
 while True:
     populacao_a = int(input('Informe a população do país A: '))
