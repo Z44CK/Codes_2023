@@ -1,1 +1,14 @@
+3. Responda es questões a seguir:
 
+a) - O que é o problema do produtor e consumidor e como podemos resolve-los com threads, explicando de forma detalhada?
+
+R: O produtor deve dormir ou descartar os dados se o buffer estiver cheio. Na próxima vez que o consumidor remover um item do buffer, ele notificará o produtor, que começará a preencher o buffer novamente. Da mesma forma, o consumidor pode dormir se descobrir que o buffer está vazio. Na próxima vez que o produtor colocar dados no buffer, ele astringrá o consumidor adormecido. 
+Uma solução inadequada pode resultar em um deadlock em que ambos os processos aguardam para serem ativados. 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+b) - Indique mais um problema classico da computação e como podemos resolve-los com threads, explicando de forma detalhada?
+
+R: O problma de buffer limitado, e consiste em coordenar o acesso de tarefas a um buffer compartilhado com capacidade de armazenamento limitada a N itens.
+O problema também pode ser resolvido com variáveis de condição. Além do mutex para acesso exclusivo ao buffer, são necessárias variáveis de condição para indicar a presença de itens e de vagas no buffer
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
