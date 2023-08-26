@@ -1,0 +1,11 @@
+OBJETO,DESCRIÇÃO,COMANDO DE INICIALIZAÇÃO
+"Thread","Objeto para representar uma unica thread em execução","threading.Start()"
+"Lock","Objeto de bloqueio primitivo","threading.Lock()"
+"Rlock","Utilizado para evitar bloqueio indesejado","threading.Rlock()"
+"Condition","Permite que as threads cooperem de maneira mais sofisticada","threading.Condition()"
+"Event","Uma ou mais threads aguardam até um evento ser sinalizado","threading.Event()"
+"Semaphore","Controla o acesso concorrente a um determinado número de recursos","threading. Semaphore()"
+"BoundedSemaphore","Controla o acesso concorrente a um determinado número de recursos e impede que o contador interno exceda o limite especificado","threading.BoundedSemaphore()"
+"Timer"," Permite agendar a execução de uma função após um determinado intervalo de tempo","threading.Timer(5, funcao_temporizada)"
+"Barrier","É um mecanismo de sincronização que permite que um grupo de threads espere umas pelas outras até que todas tenham alcançado um certo ponto de execução, antes de prosseguirem em conjunto.","threading.Barrier(x)"
+,,
