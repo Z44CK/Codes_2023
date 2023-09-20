@@ -20,7 +20,7 @@ para uma busca aleatoria e inicializar a busca aleatoria com validação cruzada
 3 - Faça uma pesquisa para conhecer um pouco mais sobre o universo de Machine Learning e responda a seguir:
 a- Qual é a diferença entre um parametro de modelo e um algoritmo de aprendizagem de hiperparametro?
 Um parametro de modelo é uma variavel do modelo selecionada que pode ser estimada ajustando os dados fornecidos ao modelo
-
+-------------------------------------------------------------------------------------------
 Um hiperparâmetro de modelo é o parâmetro cujo valor é definido antes de o modelo iniciar o treinamento.
 Eles não podem ser aprendidos ajustando o modelo aos dados.
 ------------------------------------------------------------------------------------------
